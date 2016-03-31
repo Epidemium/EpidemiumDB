@@ -5,12 +5,27 @@ EpidemiumDB is a shared database including datasets used by Epidemium Open Scien
 ### Who can contribute ? 
 Anyone who is interested in sharing Open Data linked to Cancer. The idea is to give access to anyone and anyone who need more datasets inside the database could contribute in adding new datasets and/or completing the existing datasets
 ### How to contribute ? 
-comming soon... 
+*comming soon*... 
+### Good practice in contributing 
+Do not commit directly to the master branch, create a fork first and then commit. When a step is reached a pull request is recommended.
 ## How to use EpidemiumDB ?
 ### Architecture
-coming soon... 
+*coming soon*... 
+### Validating & versioning of the database EpidemiumDB
+*coming soon*
 ### Using EpidemiumDB
-coming soon…
+*coming soon*…
+Using EpidemiumDB to run any analysis : 
+1. Check if the datasets needed are available 
+2. If no, ask to create the table by sending an email to data[a]epidemium.cc or create an issue in the GitHub EpidemiumDB repository
+3. Add you own dataset in the EpidemiumDB 
+### How to connect to EPidemiumDB
+#### Via MySql
+
+#### Via Sqlite + script R
+
+#### Via the database dump in the GitHub repository
+
 ## EpidemiumDB Documentation 
 See the [wiki](http://wiki.epidemium.cc/wiki/EpidemiumDB)(in french)
 
