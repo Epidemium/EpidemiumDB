@@ -16,9 +16,15 @@ Do not commit directly to the master branch, create a fork first and then commit
 ### Using EpidemiumDB
 *coming soon*…
 Using EpidemiumDB to run any analysis : 
+<<<<<<< Updated upstream
 * Check if the datasets needed are available 
 * If no, ask to create the table by sending an email to data[a]epidemium.cc or create an issue in the GitHub EpidemiumDB repository
 * Add you own dataset in the EpidemiumDB 
+=======
+1. Check if the datasets needed are available 
+2. If no, ask to create the table by sending an email to data[a]epidemium.cc or create an issue in the GitHub EpidemiumDB repository
+3. Add you own dataset in the EpidemiumDB 
+>>>>>>> Stashed changes
 ### How to connect to EPidemiumDB
 #### Via MySql
 
