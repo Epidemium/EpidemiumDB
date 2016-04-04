@@ -17,7 +17,8 @@ To submit your data to EpidemiumDB, please contact the Epidemium team at data[a]
 ## Using EpidemiumDB ?
 
 ### Architecture
-*coming soon*... 
+EpidemiumDB is based on a relational data model linked to [CKAN](http://ckan.org) data management platform.
+![Alt text](http://wiki.epidemium.cc/wiki/Fichier:EpidemiumDBarch.jpg "Optional title")
 
 ### Validating & versioning of the database EpidemiumDB
 *coming soon*
