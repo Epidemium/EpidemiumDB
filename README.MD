@@ -11,7 +11,7 @@ In addition, Epidemium provide links to [Open datasets](http://data.epidemium.cc
 ### Who can contribute ? 
 Individuals, research institutions, life-science industrials, and any organisation who are interested in sharing Open Data related to any type of Cancer can submit to EpidemiumDB their data or a link to their resources. Contributors can either add new datasets, and/or complete existing ones.
 
-### How to contribute ? 
+### Submit your data to EpidemiumDB 
 To submit your data to EpidemiumDB, please contact the Epidemium team at data[a]epidemium.cc 
 
 ## Using EpidemiumDB ?
