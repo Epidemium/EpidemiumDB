@@ -9,16 +9,30 @@ In addition, Epidemium provide links to [Open datasets](http://data.epidemium.cc
 
 ## Contribution 
 ### Who can contribute ? 
-Individuals, research institutions, life-science industrials, and any organisation who are interested in sharing Open Data related to any type of Cancer can submit to EpidemiumDB their data or a link to their resources. Contributors can either add new datasets, and/or complete existing ones.
+Individuals, research institutions, life-science industrials, and  organisations who are interested in sharing Open Data related to any type of Cancer can submit to EpidemiumDB their data or a link to their resources. Contributors can either add new datasets, or complete existing ones.
 
 ### Submit your data to EpidemiumDB 
 To submit your data to EpidemiumDB, please contact the Epidemium team at data[a]epidemium.cc 
 
 ## Using EpidemiumDB ?
+EpidemiumDB is a publicly available resource which is freely accessible to Epidemium project members and external people interested in Open Data in Oncology.
+The database is 
 
 ### Architecture
 EpidemiumDB is based on a relational data model linked to [CKAN](http://ckan.org) data management platform.
 ![alt tag](http://domain.com/path/to/img.png)
+
+### Data Acquisition
+*coming soon*
+
+### Database content
+The EpidemiumDB database contains the following tables:
+
+| Table Name | Description | Curation Type |
+| :---         |     :---:      |          ---: |
+| cancerType   | All cancer types    | to do    |
+| cancerRiskFactor    | All known risk factor for cancer       | to do      |
+| antiCancerDrugs    | All anti cancers drugs       | to do      |
 
 ### Validating & versioning of the database EpidemiumDB
 *coming soon*
