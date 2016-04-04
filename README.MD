@@ -20,7 +20,6 @@ The database is
 
 ### Architecture
 EpidemiumDB is based on a relational data model linked to [CKAN](http://ckan.org) data management platform.
-[[http://wiki.epidemium.cc/wiki/Fichier:EpidemiumDBarch.jpg|alt=octocat]]
 
 ### Data Acquisition
 *coming soon*
