@@ -57,7 +57,7 @@ Using EpidemiumDB to run any analysis :
 
 ## EpidemiumDB Resources & Documentation 
 The Wiki page [EpidemiumDB](http://wiki.epidemium.cc/wiki/EpidemiumDB) (in french) is used to discuss the design and developement of EpidemiumDB.
-A [presentation](http://wiki.epidemium.cc/wiki/Fichier:Presentation_EpidemiumDB_11032016.pdf), given by Olivier de Fresnoye at the March Meeting of Epidemium is available online.
+A Presentation given by Olivier de Fresnoye at the March Meeting of Epidemium is [available online](http://wiki.epidemium.cc/wiki/Fichier:Presentation_EpidemiumDB_11032016.pdf).
 
 ## Contact
 For more details, do not hesitate to contact the Epidemium team at data[a]epidemium.cc 
