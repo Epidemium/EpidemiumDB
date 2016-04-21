@@ -48,9 +48,40 @@ Using EpidemiumDB to run any analysis :
 >>>>>>> Stashed changes
 
 ### How to connect to EPidemiumDB
-#### Via MySql
+#### Via RMySQL
+The R script RMySQLepidemiumDB.R can be used to make direct connection to EpidemiumDB using the RMySQL packages. The later requires DBI library. Using this code, you will be able to make a connection, list tables and fields, retrieve tables, make queries, and export data to text, CVS, Excel, or JSON files. For Excel, the library WriteXLS is used to write an R data frame to excel. For JSON, we used the package df2json (Fig. 1). 
 
-#### Via Sqlite + script R
+```
+#Install RMySQL package 
+install.packages("RMySQL")
+
+# Load required packages
+library("DBI")
+library("sqldf")
+library("WriteXLS")
+library("rjson")
+library("jsonlite")
+library("df2json")
+
+# Load RMySQL
+library(RMySQL)
+
+# Connect to EpidemiumDB
+# create a database connection object
+# the user, password, host and database name are stored in a separate file
+# called connectDB.R that need to be called before bdConnect() function.
+setwd("/home/common/database/")
+source("connectDB.R")
+epidemiumDB = dbConnect(MySQL(), user=user, password=password, dbname=dbname, host=host)
+```
+Host name, user, password, and database name are stored in connectDB.R file that need to be called using source() before running the dbConnect() function.
+
+![alt tag](http://wiki.epidemium.cc/wiki/Fichier:RMySQL.png"R/MySQL Interface")
+
+
+
+
+#### using the SQLite version
 
 #### Via the database dump in the GitHub repository
 
