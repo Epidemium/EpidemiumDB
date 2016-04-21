@@ -93,7 +93,7 @@ rows = cursor.fetchall()
 ```
 #### Perl/EpidemiumDB interface
 [DBI](http://dbi.perl.org) is the standard database interface module for Perl.
-The script PerlEpidemiumDB.pl provide functionalities for Perl/EpidemiumDB interface.
+The script PerlEpidemiumDB.pl provides functionalities for Perl/EpidemiumDB interface.
 
 ```
 #!/usr/bin/perl
