@@ -12,31 +12,13 @@ In addition, Epidemium provide links to [Open datasets](http://data.epidemium.cc
 Individuals, research institutions, life-science industrials, and  organisations who are interested in sharing Open Data related to any type of Cancer can submit to EpidemiumDB their data or a link to their resources. Contributors can either add new datasets, or complete existing ones.
 
 ### Submit your data to EpidemiumDB 
-To submit your data to EpidemiumDB, please contact the Epidemium team at data[a]epidemium.cc 
+<<<<<<< Updated upstream
+* To submit your data to EpidemiumDB, please contact the Epidemium team at data[a]epidemium.cc 
+* For Epidemium's members, before making a request to add a new table, please check whether similar table is already created.
+* If not, please describe your table using the [EpidemiumDB Wiki page](http://wiki.epidemium.cc/wiki/EpidemiumDB) and send an email to    data[a]epidemium.cc or create an issue in the GitHub EpidemiumDB repository.
+>>>>>>> Stashed changes
 
-## Using EpidemiumDB ?
-EpidemiumDB is a publicly available resource which is freely accessible to Epidemium project members and external people interested in Open Data in Oncology.
-The database is 
-
-### Architecture
-EpidemiumDB is based on a relational data model linked to [CKAN](http://ckan.org) data management platform.
-
-### Data Acquisition
-*coming soon*
-
-### Database content
-The EpidemiumDB database contains the following tables:
-
-| Table Name | Description | Curation Type |
-| :---         |     :---:      |          ---: |
-| cancerType   | All cancer types    | to do    |
-| cancerRiskFactor    | All known risk factor for cancer       | to do      |
-| antiCancerDrugs    | All anti cancers drugs       | to do      |
-
-### Validating & versioning of the database EpidemiumDB
-*coming soon*
-
-Using EpidemiumDB to run any analysis : 
+Using EpidemiumDB to run any analysis 
 <<<<<<< Updated upstream
 * Check if the datasets needed are available 
 * If no, ask to create the table by sending an email to data[a]epidemium.cc or create an issue in the GitHub EpidemiumDB repository
@@ -47,9 +29,14 @@ Using EpidemiumDB to run any analysis :
 3. Add you own dataset in the EpidemiumDB 
 >>>>>>> Stashed changes
 
-### How to connect to EPidemiumDB
-#### Via RMySQL
-The R script RMySQLepidemiumDB.R can be used to make direct connection to EpidemiumDB using the RMySQL packages. The later requires DBI library. Using this code, you will be able to make a connection, list tables and fields, retrieve tables, make queries, and export data to text, CVS, Excel, or JSON files. For Excel, the library WriteXLS is used to write an R data frame to excel. For JSON, we used the package df2json (Fig. 1). 
+
+## Using EpidemiumDB
+EpidemiumDB is a publicly available resource which is freely accessible to Epidemium project members and external people interested in Open Data in Oncology.
+In addition to a Web interface and visualization evironement, we provide R, Python and Perl scripts to access, query, retrieve, and export EpidemiumDB data.
+
+### How to connect to EpidemiumDB ?
+#### R/EpidemiumDB interface
+The R script RMySQLepidemiumDB.R can be used to make direct connection to EpidemiumDB using the [RMySQL packages](https://cran.r-project.org/web/packages/RMySQL/index.html). The later requires DBI library. Using this code, you will be able to make a connection, list tables and fields, retrieve tables, make queries, and export data to text, CVS, Excel, or JSON files. For Excel, the library WriteXLS is used to write an R data frame to excel. For JSON, we used the package df2json (Fig. 1). 
 
 ```
 #Install RMySQL package 
@@ -76,19 +63,97 @@ epidemiumDB = dbConnect(MySQL(), user=user, password=password, dbname=dbname, ho
 ```
 Host name, user, password, and database name are stored in connectDB.R file that need to be called using source() before running the dbConnect() function.
 
-![alt tag](http://wiki.epidemium.cc/wiki/Fichier:RMySQL.png"R/MySQL Interface")
+#### Python/EpidemiumDB interface
+We provide an example script in Python that you can use to connect to EpidemiumDB using
+[MySQLdb](http://mysql-python.sourceforge.net)
+
+```
+# Install MySQLdb
+#!/usr/bin/python
+import MySQLdb
+# Open database connection
+db = MySQLdb.connect(host="host_name",    # host name (IP address for Epidemium.cc)
+                     user="username",     # your username
+                     passwd="password",   # your password
+                     db="epidemiumdb")    # name of the database
 
 
+# Prepare a cursor object using cursor()
+cursor = db.cursor()
+
+# Send and SQL query using execute()
+cursor.execute("SELECT VERSION()")
+
+# Fetch a single row using fetchone()
+data = cursor.fetchone()
+print "Database version : %s " % data
+
+cursor.execute("SELECT * FROM metadata")
+rows = cursor.fetchall()
+```
+#### Perl/EpidemiumDB interface
+[DBI](http://dbi.perl.org) is the standard database interface module for Perl.
+The script PerlEpidemiumDB.pl provide functionalities for Perl/EpidemiumDB interface.
+
+```
+#!/usr/bin/perl
+use strict;
+use warnings;
+
+use DBI;
+
+my $dbfile   = "epidemiumdb";
+ 
+my $dsn      = "dbi:SQLite:dbname=$dbfile";
+my $user     = "";
+my $password = "";
+my $dbh = DBI->connect($dsn, $user, $password, {
+   PrintError       => 0,
+   RaiseError       => 1,
+   AutoCommit       => 1,
+   FetchHashKeyName => 'NAME_lc',
+});
+
+....
+
+$dbh->disconnect;
+```
+
+### EpidemiumDB Architecture
+EpidemiumDB is based on a relational data model linked to [CKAN](http://ckan.org) data management platform.
+
+
+### Data Acquisition
+*coming soon*
+
+### Database content
+The EpidemiumDB database contains the following tables:
+
+| Table Name | Description | Curation Type |
+| :---         |     :---:      |          ---: |
+| cancerType   | All cancer types    | to do    |
+| cancerRiskFactor    | All known risk factor for cancer       | to do      |
+| antiCancerDrugs    | All anti cancers drugs       | to do      |
+
+### Validating & versioning of the database EpidemiumDB
+*coming soon*
 
 
 #### using the SQLite version
 
-#### Via the database dump in the GitHub repository
+
 
 ## EpidemiumDB Resources & Documentation 
-The Wiki page [EpidemiumDB](http://wiki.epidemium.cc/wiki/EpidemiumDB) (in french) is used to discuss the design and developement of EpidemiumDB.
-A Presentation given by Olivier de Fresnoye at the March Meeting of Epidemium is [available online](http://wiki.epidemium.cc/wiki/Fichier:Presentation_EpidemiumDB_11032016.pdf).
+1. The Wiki page [EpidemiumDB](http://wiki.epidemium.cc/wiki/EpidemiumDB) (in french) is used to discuss the design and developement of EpidemiumDB.
+2. A presentation given by Seraya Maouche on April, 7th, 2016 at the Epidemium Meetup is
+[available online](http://wiki.epidemium.cc/wiki/Fichier:EpidemiumDB_7april2016.pdf).
+3. A Presentation prepared by Seraya Maouche and presented by Olivier de Fresnoye at the March Meeting of Epidemium is [available online](http://wiki.epidemium.cc/wiki/Fichier:Presentation_EpidemiumDB_11032016.pdf).
 
-## Contact
-For more details, do not hesitate to contact the Epidemium team at data[a]epidemium.cc 
+## Publication
+A manuscript describing EpidemiumDB is under preparation, if you have contributed to EpidemiumDB, please join the collaborative editor project on [Authoria platform] (https://www.authorea.com) in order to contribute to the manuscript.
+
+## Contacting the EpidemiumDB team
+* For administration issues, do not hesitate to contact the Epidemium team at data[a]epidemium.cc 
+* For scientific questions, database content, conception and development of EpidemiumdDB, please contact Seraya Maouche (seraya.maouche[a]iscb.org)
+* For cancer epidemiological data, please contact Edouard Debonneuil (edebonneuil[a]yahoo.fr).
 
