@@ -131,9 +131,12 @@ The EpidemiumDB database contains the following tables:
 
 | Table Name | Description | Curation Type |
 | :---         |     :---:      |          ---: |
-| cancerType   | All cancer types    | to do    |
-| cancerRiskFactor    | All known risk factor for cancer       | to do      |
-| antiCancerDrugs    | All anti cancers drugs       | to do      |
+| cancerType   | All cancer types    | Manual curation and validation by an expert   |
+| cancerRiskFactor    | All known risk factor for cancer       | Manual curation and validation by an expert      |
+| riskFactorGroup   | groups of cancer risk factor      | Manual curation and validation by an expert     |
+| riskFactor2publication   | All publications about cancer risk factors       | data retrieval, text mining, and manual curation      |
+| antiCancerDrugs    | All anti cancers drugs       | data retrieval, text mining, and manual curation      |
+
 
 ### Validating & versioning of the database EpidemiumDB
 *coming soon*
