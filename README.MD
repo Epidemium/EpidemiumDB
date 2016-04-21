@@ -153,7 +153,7 @@ The EpidemiumDB database contains the following tables:
 A manuscript describing EpidemiumDB is under preparation, if you have contributed to EpidemiumDB, please join the collaborative editor project on [Authoria platform] (https://www.authorea.com) in order to contribute to the manuscript.
 
 ## Contacting the EpidemiumDB team
-For administration issues, do not hesitate to contact the Epidemium team at data[a]epidemium.cc 
-For scientific questions, database content, conception and development of EpidemiumdDB, please contact Seraya Maouche (seraya.maouche[a]iscb.org)
-For cancer epidemiological data, please contact Edouard Debonneuil (edebonneuil[a]yahoo.fr).
+* For administration issues, do not hesitate to contact the Epidemium team at data[a]epidemium.cc 
+* For scientific questions, database content, conception and development of EpidemiumdDB, please contact Seraya Maouche (seraya.maouche[a]iscb.org)
+* For cancer epidemiological data, please contact Edouard Debonneuil (edebonneuil[a]yahoo.fr).
 
