@@ -45,6 +45,7 @@ ckanr_setup(url = "http://data.epidemium.cc", key = getOption("ckan_demo_key"))
 ping()
 ping(url = "http://data.epidemium.cc", as = "json")
 
+# List organizations
 organization_list()
 (orgs <- organization_list())
 orgs[[1]]
@@ -84,5 +85,7 @@ package_search(q = '*:*', fq = 'num_tags:[1 TO *]')$count
 
 # List tags
 tag_list('cancer', url = "http://data.epidemium.cc", as = 'table')
+
+# For other functionalitites, please refer to rckan documentation: https://cran.r-project.org/web/packages/ckanr/ckanr.pdf
 
 
