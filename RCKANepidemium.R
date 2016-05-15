@@ -22,6 +22,7 @@ Archive Network; http://ckan.org), a web-based open source data management syste
 # The library was developed by Scott Chamberlain, Imanuel Costigan, Wush Wu, and Florian Mayer
 # ckran on R CRAN: https://cran.r-project.org/web/packages/ckanr/index.html
 # ckran documentation: https://cran.r-project.org/web/packages/ckanr/ckanr.pdf
+# ckran on Github: https://github.com/ropensci/ckanr/issues
 
 ###### Install required R packages
 # 1- install ckanr from Github
@@ -35,6 +36,53 @@ install.packages("DBI")
 library("DBI")
 library("ckanr")
 
+# CKAN Setting
+# use the function ckanr_setup() 
+ckanr_setup(url = "http://data.epidemium.cc", key = getOption("ckan_demo_key"))
 
 
-# 
+# Ping a CKAN server to test that it’s up or down.
+ping()
+ping(url = "http://data.epidemium.cc", as = "json")
+
+organization_list()
+(orgs <- organization_list())
+orgs[[1]]
+unique(length(orgs))
+
+# Different data formats
+organization_list(as = 'json')
+organization_list(as = 'table')
+
+# Return a list of the package’s activity
+# create a package
+(res <- package_create("package_name"))
+# list package activity
+package_activity_list(res$id)
+
+# List datasets
+package_list()
+package_list(as = 'json')
+package_list(as = 'table')
+
+package_list_current()
+package_list_current(as = 'json')
+package_list_current(as = 'table')
+
+# Search for packages.
+# package_search(q = "*:*", fq = NULL, sort = NULL, rows = NULL,
+# start = NULL, facet = FALSE, facet.limit = NULL, facet.field = NULL,
+# url = get_default_url(), as = "list", ...)
+
+package_search(q = '*:*')
+package_search(q = '*:*', rows = 2, as = 'json')
+package_search(q = '*:*', rows = 2, as = 'table')
+package_search(q = '*:*', sort = 'score asc')
+package_search(q = '*:*', fq = 'num_tags:[3 TO *]')$count
+package_search(q = '*:*', fq = 'num_tags:[2 TO *]')$count
+package_search(q = '*:*', fq = 'num_tags:[1 TO *]')$count
+
+# List tags
+tag_list('cancer', url = "http://data.epidemium.cc", as = 'table')
+
+
